@@ -47,8 +47,13 @@ Health check: `curl http://localhost:3000/health` → `{"status":"ok"}`
 
 ## Testing
 
+Ensure the database is running before running backend tests (`docker compose up -d`).
+
 ```bash
+# Backend — integration tests against real Postgres
 cd backend && npm test
+
+# Frontend — component tests (no DB required)
 cd frontend && npm test
 ```
 
