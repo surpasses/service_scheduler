@@ -54,9 +54,9 @@ Multiple managers assign **Quotes** to **Technicians** as **Jobs** in 2-hour win
 - [x] Role guard helper (`requireRole('manager' | 'technician')`)
 
 ### 3. Backend — quotes
-- [ ] `POST /quotes` (manager only)
-- [ ] `GET /quotes/:id`
-- [ ] `GET /quotes?status=unscheduled`
+- [x] `POST /quotes` (manager only)
+- [x] `GET /quotes/:id`
+- [x] `GET /quotes?status=unscheduled`
 
 ### 4. Backend — jobs (the core)
 - [ ] `POST /jobs` — assign quote to technician (manager only)
