@@ -59,16 +59,16 @@ Multiple managers assign **Quotes** to **Technicians** as **Jobs** in 2-hour win
 - [x] `GET /quotes?status=unscheduled`
 
 ### 4. Backend — jobs (the core)
-- [ ] `POST /jobs` — assign quote to technician (manager only)
-  - [ ] Validate window is exactly 2 hours and `end > start`
-  - [ ] Reject if quote already scheduled (409)
-  - [ ] Reject if technician has overlapping scheduled job (409)
-  - [ ] Single transaction: create job + flip quote to `scheduled` + insert `job_assigned` notification
-- [ ] `GET /jobs/:id`
-- [ ] `GET /jobs?technician_id=&status=` (ordered by `start_time`)
-- [ ] `POST /jobs/:id/complete` — technician only, must own job
-  - [ ] Reject if not in `scheduled` state (409)
-  - [ ] Single transaction: job → completed, quote → completed, insert `job_completed` notification for manager
+- [x] `POST /jobs` — assign quote to technician (manager only)
+  - [x] Validate window is exactly 2 hours and `end > start`
+  - [x] Reject if quote already scheduled (409)
+  - [x] Reject if technician has overlapping scheduled job (409)
+  - [x] Single transaction: create job + flip quote to `scheduled` + insert `job_assigned` notification
+- [x] `GET /jobs/:id`
+- [x] `GET /jobs?technician_id=&status=` (ordered by `start_time`)
+- [x] `POST /jobs/:id/complete` — technician only, must own job
+  - [x] Reject if not in `scheduled` state (409)
+  - [x] Single transaction: job → completed, quote → completed, insert `job_completed` notification for manager
 
 ### 5. Conflict prevention — row lock on technician
 
@@ -90,10 +90,10 @@ UPDATE quotes SET status = 'scheduled' WHERE id = $quote;
 COMMIT;
 ```
 
-- [ ] Wrap `POST /jobs` in a transaction
-- [ ] `SELECT ... FOR UPDATE` on the technician row at the start
-- [ ] Overlap query using `tstzrange(...) && tstzrange(...)` against scheduled jobs
-- [ ] Return `409` if overlap found, otherwise insert job + notification + update quote
+- [x] Wrap `POST /jobs` in a transaction
+- [x] `SELECT ... FOR UPDATE` on the technician row at the start
+- [x] Overlap query using `tstzrange(...) && tstzrange(...)` against scheduled jobs
+- [x] Return `409` if overlap found, otherwise insert job + notification + update quote
 - [ ] Test: two concurrent assignments to same technician/window — exactly one wins
 
 ### 6. Notifications

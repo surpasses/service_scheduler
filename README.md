@@ -86,3 +86,7 @@ docker-compose.yml
 - <u>**For Schema, API or tech stack decision and tradeoffs, they are attached in their respective markdown files inside `docs/`**</u>
 
 - All SQL queries are parameterised (`$1`, `$2`). User input is never inserted directly into a query string, which prevents SQL injection.
+
+- **Conflict prevention** via ```SELECT ... FOR UPDATE``` on the technician row.
+    When two managers assign the same technician simultaneously, both requests could pass the overlap check before either one writes, double-booking the technician. We prevent this by locking the technician's row at the start of the transaction ```(SELECT ... FOR UPDATE)```. 
+    The second request waits until the first commits, then sees the newly created job and rejects with 409.  
