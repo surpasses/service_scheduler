@@ -49,9 +49,9 @@ Multiple managers assign **Quotes** to **Technicians** as **Jobs** in 2-hour win
 - [x] Wire migrations/seed into `docker compose` (mounted to `/docker-entrypoint-initdb.d/`)
 
 ### 2. Backend — users & auth stub
-- [ ] `X-User-Id` middleware that loads the user and exposes `req.user`
-- [ ] `POST /users`, `GET /users/:id`, `GET /users?role=`
-- [ ] Role guard helper (`requireRole('manager' | 'technician')`)
+- [x] `X-User-Id` middleware that loads the user and exposes `req.user`
+- [x] `POST /users`, `GET /users/:id`, `GET /users?role=`
+- [x] Role guard helper (`requireRole('manager' | 'technician')`)
 
 ### 3. Backend — quotes
 - [ ] `POST /quotes` (manager only)
