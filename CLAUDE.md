@@ -43,10 +43,10 @@ Multiple managers assign **Quotes** to **Technicians** as **Jobs** in 2-hour win
 - [x] Docs drafted (schema, api, techStack)
 
 ### 1. Database
-- [ ] SQL migration / init script for `users`, `quotes`, `jobs`, `notifications`
-- [ ] Indexes: `jobs(technician_id, start_time)`, unique on `jobs(quote_id)`
-- [ ] Seed script: a few managers, technicians, and unscheduled quotes
-- [ ] Wire migrations/seed into `docker compose` or an `npm` script
+- [x] SQL migration / init script for `users`, `quotes`, `jobs`, `notifications`
+- [x] Indexes: `jobs(technician_id, start_time)`, unique on `jobs(quote_id)`
+- [x] Seed script: a few managers, technicians, and unscheduled quotes
+- [x] Wire migrations/seed into `docker compose` (mounted to `/docker-entrypoint-initdb.d/`)
 
 ### 2. Backend — users & auth stub
 - [ ] `X-User-Id` middleware that loads the user and exposes `req.user`
