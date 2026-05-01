@@ -114,12 +114,12 @@ COMMIT;
 - [x] Backend: completing a non-scheduled job rejected (409)
 
 ### 9. README write-up
-- [ ] Setup guide
-- [ ] How to run tests
+- [x] Setup guide
+- [x] How to run tests
 
 ### 10. Submission
-- [ ] Push to GitHub
-- [ ] Verify clean clone → `docker compose up -d` → tests pass → app runs
+- [x] Push to GitHub
+- [x] Verify clean clone → `docker compose up -d` → tests pass → app runs
 
 ## Out of scope (call out in README)
 
