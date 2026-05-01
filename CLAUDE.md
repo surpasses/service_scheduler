@@ -94,7 +94,7 @@ COMMIT;
 - [x] `SELECT ... FOR UPDATE` on the technician row at the start
 - [x] Overlap query using `tstzrange(...) && tstzrange(...)` against scheduled jobs
 - [x] Return `409` if overlap found, otherwise insert job + notification + update quote
-- [ ] Test: two concurrent assignments to same technician/window — exactly one wins
+- [x] Test: two concurrent assignments to same technician/window — exactly one wins
 
 ### 6. Notifications
 - [x] Insert `Notification` row inside the same transaction as the triggering action
@@ -108,10 +108,10 @@ COMMIT;
 - [x] Tailwind for layout — keep it plain
 
 ### 8. Tests (Vitest)
-- [ ] Backend: happy-path assign + complete
-- [ ] Backend: overlap rejected (409)
-- [ ] Backend: non-2-hour window rejected (400)
-- [ ] Backend: completing a non-scheduled job rejected (409)
+- [x] Backend: happy-path assign + complete
+- [x] Backend: overlap rejected (409)
+- [x] Backend: non-2-hour window rejected (400)
+- [x] Backend: completing a non-scheduled job rejected (409)
 
 ### 9. README write-up
 - [ ] Setup guide
