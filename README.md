@@ -95,3 +95,10 @@ docker-compose.yml
 - **Conflict prevention** via ```SELECT ... FOR UPDATE``` on the technician row.
     When two managers assign the same technician simultaneously, both requests could pass the overlap check before either one writes, double-booking the technician. We prevent this by locking the technician's row at the start of the transaction ```(SELECT ... FOR UPDATE)```. 
     The second request waits until the first commits, then sees the newly created job and rejects with 409.  
+
+## Final thoughts:
+- Overall, the scheduler took me around ~3-4 hours to implement, covering concurrency. If I had more time,
+- I would look to use an event-driven approach to simulate notifications rather than just using DB rows, such as using a third-party
+- service such as Resend to send emails whenever jobs are completed,
+- incorporate authentication,
+  and incorporate some frontend tests.
