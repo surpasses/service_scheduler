@@ -80,3 +80,9 @@ frontend/   Vite + React + Tailwind app
 docs/       Schema, API, tech stack notes
 docker-compose.yml
 ```
+
+## Key Implementation Decision and Tradeoffs:
+
+- <u>**For Schema, API or tech stack decision and tradeoffs, they are attached in their respective markdown files inside `docs/`**</u>
+
+- All SQL queries are parameterised (`$1`, `$2`). User input is never inserted directly into a query string, which prevents SQL injection.
