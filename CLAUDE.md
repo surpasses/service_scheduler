@@ -97,8 +97,8 @@ COMMIT;
 - [ ] Test: two concurrent assignments to same technician/window — exactly one wins
 
 ### 6. Notifications
-- [ ] Insert `Notification` row inside the same transaction as the triggering action
-- [ ] (Optional) `GET /notifications?recipient_id=` for the UI/log view
+- [x] Insert `Notification` row inside the same transaction as the triggering action
+- [x] (Optional) `GET /notifications?recipient_id=` for the UI/log view
 
 ### 7. Frontend
 - [ ] Identity picker (dropdown of users → `localStorage` → `X-User-Id` header)
