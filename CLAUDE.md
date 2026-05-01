@@ -101,11 +101,11 @@ COMMIT;
 - [x] (Optional) `GET /notifications?recipient_id=` for the UI/log view
 
 ### 7. Frontend
-- [ ] Identity picker (dropdown of users → `localStorage` → `X-User-Id` header)
-- [ ] Manager view: list unscheduled quotes, assign form (technician + 2-hour window)
-- [ ] Technician view: list of own jobs, "mark complete" button
-- [ ] Surface notifications somewhere (toast, sidebar, or simple list)
-- [ ] Tailwind for layout — keep it plain
+- [x] Identity picker (dropdown of users → `localStorage` → `X-User-Id` header)
+- [x] Manager view: list unscheduled quotes, assign form (technician + 2-hour window)
+- [x] Technician view: list of own jobs, "mark complete" button
+- [x] Surface notifications somewhere (toast, sidebar, or simple list)
+- [x] Tailwind for layout — keep it plain
 
 ### 8. Tests (Vitest)
 - [ ] Backend: happy-path assign + complete
